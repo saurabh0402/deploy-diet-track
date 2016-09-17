@@ -194,12 +194,6 @@ app.post("/addfood", function(req, res){
 
 app.post("/getfood", function(req, res){
   if(req.session.email){
-    mongoClient.connect(mongoURL, function(err, db){
-      if(err){
-        res.json({"success": 0, "error": 1});
-        return;
-      }
-
       db.collection('users').find({'email': req.session.email}).count(function(err, c){
         if(c == 0){
           
