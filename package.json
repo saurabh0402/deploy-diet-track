@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-ex",
+  "name": "deploy-diet-track",
   "version": "0.0.1",
   "description": "Node.js sample app for OpenShift 3",
   "main": "server.js",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/openshift/nodejs-ex.git"
+    "url": "https://github.com/saurabh0402/deploy-diet-track.git"
   },
-  "author": "Steve Speicher <sspeiche@gmail.com>",
+  "author": "saurabh0402 <saurabh.k0402@gmail.com>",
   "license": "CC-BY-1.0",
   "bugs": {
-    "url": "http://github.com/openshift/nodejs-ex/issues"
+    "url": "https://github.com/saurabh0402/deploy-diet-track/issues"
   },
-  "homepage": "http://github.com/openshift/nodejs-ex"
+  "homepage": "https://github.com/saurabh0402/deploy-diet-track"
 }
