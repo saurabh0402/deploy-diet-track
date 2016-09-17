@@ -1,6 +1,6 @@
 body{
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
 
@@ -10,7 +10,7 @@ body{
     height: 100%;
 }
 #board {
-	height: 600px;
+    height: 600px;
 }
 
 #myNavbar {
@@ -18,13 +18,13 @@ body{
 }
 
 .packer {
-	margin: 0;
-	padding: 0;
-	border-radius: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
 }
 
 #main_content{
-	margin-top: 50px;
+    margin-top: 50px;
 }
 
 #wrapper {
@@ -43,7 +43,7 @@ body{
 }
 
 #middle_div{
-	padding: 20px;
+    padding: 20px;
     float: right;
     height: 623px;
     background: rgba(51, 122, 183, 0.89);;
@@ -59,8 +59,8 @@ body{
 }
 
 .l1{
-	overflow: hidden;
-	display: inline-block;
+    overflow: hidden;
+    display: inline-block;
     background: #eee;
     margin-top: 20px;
     width: 100%;
@@ -70,8 +70,8 @@ body{
 }
 
 .r1{
-	overflow: hidden;
-	display: inline-block;
+    overflow: hidden;
+    display: inline-block;
     background: #eee;
     margin-top: 20px;
     width: 100%;
@@ -104,16 +104,17 @@ body{
 }
 
 #main_input{
-	height: 280px;
-	width: 100%;
-	background: #fff;
+    height: 280px;
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
 }
 
 #list{
-	margin-top: 25px;
+    margin-top: 25px;
     padding: 5px;
-	width: 100%;
-	background: #fff;
+    width: 100%;
+    background: #fff;
     overflow: auto;
 }
 
@@ -128,7 +129,7 @@ body{
 }
 
 #s1{
-	display: block;
+    display: block;
     width: 50%;
     padding: 10px;
     margin: 0 auto;
@@ -137,7 +138,7 @@ body{
 }
 
 #item{
-	margin: 20px;
+    margin: 20px;
     width: 50%;
     margin: 0 auto;
     margin-top: 15px;
@@ -149,45 +150,45 @@ body{
 }
 
 #submit{
-	display: block;
+    display: block;
     margin: 0 auto;
     padding: 10px;
     width: 40%;
 }
 
 .title_l{
-	display: block;
+    display: block;
     margin-left: 42px;
     font-size: 13px;
 }
 
 .content_l{
-	display: inline-block;
-	font-size: 10px;
+    display: inline-block;
+    font-size: 10px;
     margin-left: 42px;
 }
 
 .tip_r{
-	display: block;
+    display: block;
     margin-left: 42px;
     font-size: 1.1em;
     text-decoration: underline;
 }
 
 .content_r{
-	display: inline-block;
-    margin-left: 15px;	
+    display: inline-block;
+    margin-left: 15px;  
 }
 
 #calendar{
-	height: 140px;
+    height: 140px;
     background: #fff;
     margin-bottom: 10px;
     display: none;
 }
 
 #i1{
-	background-image: url("../images/temp_opt.jpg");
+    background-image: url("../images/temp_opt.jpg");
     background-position: top left;
     background-size: 40px 40px;
     background-repeat: no-repeat;
