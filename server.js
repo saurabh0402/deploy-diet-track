@@ -177,7 +177,7 @@ app.post("/addfood", function(req, res){
 
         db.collection('users').update({'email': req.session.email}, {$push: {'food': food}}, function(err, result){
           if(err){
-            db.close();
+            
             res.json({"success": 0, "error": "Internal error"});
             return;
           }
@@ -202,7 +202,7 @@ app.post("/getfood", function(req, res){
 
       db.collection('users').find({'email': req.session.email}).count(function(err, c){
         if(c == 0){
-          db.close();
+          
           res.json({'success': 0, 'error': 'Please login to continue'});
           return;
         }
@@ -216,7 +216,7 @@ app.post("/getfood", function(req, res){
           }
         });
 
-        db.close();
+        
       });
 
     })
