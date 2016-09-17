@@ -253,9 +253,9 @@ hr {
 }
 
 .Form{
-	margin: 10%;
 	padding: 0 10% 10% 10%;
 	min-width: 200px;
+	margin-top: 35px;
 }
 
 .alignment{
