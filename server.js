@@ -213,7 +213,6 @@ app.post("/getfood", function(req, res){
         
       });
 
-    })
   }
 
   else {
