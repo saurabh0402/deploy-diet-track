@@ -114,6 +114,47 @@ app.post("/signup", function(req, res){
 
 });
 
+app.post("/signin", function(req, res){
+  var user = {
+    "email": req.body.email,
+    "pass": req.body.pass
+  };
+
+  db.collection('users').find({"email": user.email}).count(function(err, c){
+      if(c == 0){
+        
+        res.json({"success": 0, "error": "Wrong username or password"});
+        return;
+      }
+
+      var cursor = db.collection('users').find({"email": user.email});
+      cursor.each(function(err, d){
+        if(err){
+          res.json({"success": 0, "error": "Internal error"});
+          return;
+        }
+
+        if(d != null){
+          bcrypt.compare(user.pass, d.pass, function(err, ans){
+            if(ans){
+              
+              res.json({"success": 1, "error": 0});
+              req.session.email = user.email;
+              req.session.save();
+              return;
+            }
+
+            else {
+              
+              res.json({"success": 0, "error": "Wrong username or password"});
+              return;
+            }
+          });
+        }
+      });
+    });
+});
+
 app.get("/logout", function(req, res){
   delete req.session.email;
   res.redirect("/");
