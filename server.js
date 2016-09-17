@@ -155,6 +155,78 @@ app.post("/signin", function(req, res){
     });
 });
 
+app.post("/addfood", function(req, res){
+  var food = {
+    //"id": req.body.foodid,
+    "category": req.body.category,
+    "name": req.body.foodname,
+    "date": req.body.date
+  }
+
+  if(req.session.email){
+      db.collection('users').find({'email': req.session.email}).count(function(err, c){
+        if(err){
+          res.json({"success": 0, "error": "Internal error"});
+          return;
+        }
+
+        if(c == 0){
+          res.json({"success": 0, "error": "Please sign in to do this!"});
+          return;
+        } 
+
+        db.collection('users').update({'email': req.session.email}, {$push: {'food': food}}, function(err, result){
+          if(err){
+            db.close();
+            res.json({"success": 0, "error": "Internal error"});
+            return;
+          }
+
+          res.json({"success": 1, "error": 0, "food": food});
+        });
+      });
+    }
+
+    else {
+      res.json({"success": 0, "error": "Please login to continue"});
+    }
+});
+
+app.post("/getfood", function(req, res){
+  if(req.session.email){
+    mongoClient.connect(mongoURL, function(err, db){
+      if(err){
+        res.json({"success": 0, "error": 1});
+        return;
+      }
+
+      db.collection('users').find({'email': req.session.email}).count(function(err, c){
+        if(c == 0){
+          db.close();
+          res.json({'success': 0, 'error': 'Please login to continue'});
+          return;
+        }
+
+        var cursor = db.collection('users').find({'email': req.session.email});
+
+        cursor.each(function(err, doc){
+          if(doc != null){
+            res.json({"success": 1, "food": doc.food});
+            return;
+          }
+        });
+
+        db.close();
+      });
+
+    })
+  }
+
+  else {
+    res.json({"success": 0, "error": "Please login to continue"});
+  }
+});
+
 app.get("/logout", function(req, res){
   delete req.session.email;
   res.redirect("/");
