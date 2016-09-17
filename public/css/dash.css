@@ -1,0 +1,223 @@
+body{
+	margin: 0;
+	padding: 0;
+    height: 100%;
+}
+
+.container-fluid{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+#board {
+	height: 600px;
+}
+
+#myNavbar {
+    margin-left: 20px;
+}
+
+.packer {
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+}
+
+#main_content{
+	margin-top: 50px;
+}
+
+#wrapper {
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+
+#left_div{
+    padding: 10px;
+    height: 623px;
+    background: orange;
+    display: none;
+    width: 30%;
+    float: left;
+}
+
+#middle_div{
+	padding: 20px;
+    float: right;
+    height: 623px;
+    background: rgba(51, 122, 183, 0.89);;
+    width: 100%;
+}
+
+#right_div{
+    padding: 10px;
+    float: right;
+    height: 623px;
+    background: rgba(0, 128, 89, 0.6);;
+    width: 30%;
+}
+
+.l1{
+	overflow: hidden;
+	display: inline-block;
+    background: #eee;
+    margin-top: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.r1{
+	overflow: hidden;
+	display: inline-block;
+    background: #eee;
+    margin-top: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+@media(max-width: 767px){
+    
+    #wrapper{
+        width: 100%;
+        height: auto;
+    }
+
+    #middle_div{
+        width:100%;
+        height: auto;
+    }
+
+    #left_div {
+        width:100%;
+        height: auto;
+    }
+
+    #right_div{
+        width:100%;
+        height: auto;
+    }
+}
+
+#main_input{
+	height: 280px;
+	width: 100%;
+	background: #fff;
+}
+
+#list{
+	margin-top: 25px;
+    padding: 5px;
+	width: 100%;
+	background: #fff;
+    overflow: auto;
+}
+
+#ques{
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+#s1{
+	display: block;
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+}
+
+#item{
+	margin: 20px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 10px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+#submit{
+	display: block;
+    margin: 0 auto;
+    padding: 10px;
+    width: 40%;
+}
+
+.title_l{
+	display: block;
+    margin-left: 42px;
+    font-size: 13px;
+}
+
+.content_l{
+	display: inline-block;
+	font-size: 10px;
+    margin-left: 42px;
+}
+
+.tip_r{
+	display: block;
+    margin-left: 42px;
+    font-size: 1.1em;
+    text-decoration: underline;
+}
+
+.content_r{
+	display: inline-block;
+    margin-left: 15px;	
+}
+
+#calendar{
+	height: 140px;
+    background: #fff;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#i1{
+	background-image: url("../images/temp_opt.jpg");
+    background-position: top left;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+}
+
+#title_list{
+    display: block;
+    padding: 10px;
+    font-size: 1.4em;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.list_item {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    background:#ddd;
+    margin-bottom: 5px;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 50px;
+}
+
+.timespan {
+    float: right;
+}
+
+#foodHistory {
+    height: 220px;
+    overflow: auto;
+}

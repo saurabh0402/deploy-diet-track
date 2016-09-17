@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/main.css" rel="stylesheet">
+	
+	<!-- <link href="css/font-awesome.min.css" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Abel|Open+Sans+Condensed:300" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> -->
+	
+	<link href="/css/dash.css" rel="stylesheet">
+	
+	<style type="text/css">
+		@font-face
+		{
+			font-family: 'Abel';
+    		src: url('fonts/AbelRegular.ttf');
+		}
+
+		@font-face
+		{
+			font-family: 'Open Sans Condensed';
+    		src: url('fonts/OpenSansCond.ttf');
+		}
+
+		@font-face
+		{
+			font-family: 'Poiret One';
+    		src: url('fonts/PoiretOneRegular.ttf');
+		}
+		
+	</style>
+	
+	<script src="/js/jquery.min.js" rel="stylesheet"> </script>
+	<script src="/js/bootstrap.min.js" rel="stylesheet"> </script>
+
+	<script type="text/javascript">
+		var i = 0;
+
+		$(function() {
+		    $('a[href*="#"]:not([href="#"])').click(function() {
+		    	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		        	var target = $(this.hash);
+		        	target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		        	if (target.length) {
+		          	$('html, body').animate({
+		            	scrollTop: target.offset().top
+		          	}, 850);
+		          	return false;
+		        	}
+		      	}
+			});
+		});
+
+	</script>
+</head>
+<body onload="image_slider()">
+	<div id="loading_div">
+	
+		<div id="floating_div">
+			<img src="/images/apple.gif" class="gif_image">
+			<img src="/images/peach.gif" class="gif_image">
+			<img src="/images/banana.gif" class="gif_image">
+			<img src="/images/orange.gif" class="gif_image">
+			<img src="/images/pear.gif" class="gif_image">
+			<span id="quotes">Getting your food gym ready...</span>
+
+		</div>
+
+	</div>
+	
+	<div class="container-fluid">
+		<div id="dark">
+		</div>
+
+		<nav id="top-bar" class="nav navbar-inverse navbar-fixed-top">
+				 <div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Diet Tracker</a>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="/logout">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+		</nav>
+		<div id="top"></div>
+		<div id="main_content">
+
+		<div id="wrapper">
+			<div id="middle_div">	
+				<div id="main_input">
+					<span id="ques">What you ate today?</span>
+
+					<form  action = "#" method = "POST" name = "addfoodform">
+						<select id="s1" name = "category">
+						  <option value="category">Select a food category?</option>
+						  <option value="fruits">Fruits</option>
+						  <option value="vegetables">Vegetables</option>
+						  <option value="non_veg">Non-veg</option>
+						  <option value="junks">Junk foods</option>
+						  <option value="others">Others</option>
+						</select> 
+
+						<input type="text" id="item" name="item">
+						<input type="submit" id="submit" name="submit" value="Submit">
+					</form>
+
+				</div>
+
+				<div id="list">
+					<span id="title_list">Past's Meal...</span>
+					<div id = "foodHistory">
+						
+					</div>
+				</div>
+			</div>
+			<!--
+			<div id="left_div">	
+
+				<div class="l1" id="i1">
+					<span class="title_l">Mango</span>
+					<span class="content_l">The king of all fruits, yellow in appearance and very sweet in taste full of energy.</span>
+				</div>
+				<div class="l1">
+					<span class="title_l">Mango</span>
+					<span class="content_l">The king of all fruits, yellow in appearance and very sweet in taste full of energy.</span>
+				</div>
+				<div class="l1">
+					<span class="title_l">Mango</span>
+					<span class="content_l">The king of all fruits, yellow in appearance and very sweet in taste full of energy.</span>
+				</div>
+
+			</div>
+			-->
+		</div>
+
+		<div id="right_div">	
+			<!--<div id="calendar">
+			</div>-->
+
+			<div class="r1">
+				<span class="tip_r">TIP #1</span>
+				<span class="content_r">An apple a day keeps doctor away.</span>
+			</div>
+			<div class="r1">
+				<span class="tip_r">TIP #2</span>
+				<span class="content_r">Eat a big, Balanced Breakfast</span>
+			</div>
+			<div class="r1">
+				<span class="tip_r">TIP #3</span>
+				<span class="content_r">Let food be thy medicine and medicine be thy food.</span>
+			</div>
+
+			<div class="r1">
+				<span class="tip_r">TIP #4</span>
+				<span class="content_r">Pasta doesn't make you fat. How much pasta you eat makes you fat.</span>
+			</div>
+		</div>
+
+		</div>
+	</div>
+
+	</div>
+	<script type="text/javascript" src = "/js/dashboard.js"></script>
+</body>
+
+</html>
