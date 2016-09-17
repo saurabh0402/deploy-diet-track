@@ -79,6 +79,46 @@ app.get("/dashboard", function(req, res){
     res.redirect("/");
 });
 
+app.post("/signup", function(req, res){
+  var user = {
+      "email": req.body.email,
+      "pass": req.body.pass,
+      "food": [],
+    };
+
+    bcrypt.genSalt(10, function(err, salt){
+      bcrypt.hash(user.pass, salt, function(err, hashedPass){
+        user.pass = hashedPass;
+
+        db.collection('users').find({"email": user.email}).count(function(err, val){
+          if(val != 0){
+            res.json({"success": 0, "error": "email taken"});
+            return;
+          }
+
+          db.collection('users').insertOne(user, function(err, result){
+            if(err){
+              db.close();
+              res.json({"success": 0, "error": "Internal error"});
+              return;
+            }
+
+            db.close();
+            req.session.email = user.email;
+            res.json({"success": 1, "error": false});
+            req.session.email = user.email;
+          });
+        });
+      });
+    });
+
+});
+
+app.get("/logout", function(req, res){
+  delete req.session.email;
+  res.redirect("/");
+});
+
 app.get('/pagecount', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
