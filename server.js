@@ -66,36 +66,23 @@ var initDb = function(callback) {
 };
 
 app.get('/', function (req, res) {
-  // try to initialize the db on every request if it's not already
-  // initialized.
-  if (!db) {
-    initDb(function(err){});
-  }
-  if (db) {
-    var col = db.collection('counts');
-    // Create a document with request IP and current time of request
-    col.insert({ip: req.ip, date: Date.now()});
-    col.count(function(err, count){
-      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails });
-    });
-  } else {
-    res.render('index.html', { pageCountMessage : null});
-  }
+  if(req.session.email)
+    res.sendFile(__dirname + '/views/dashboard.html');
+  else
+    res.sendFile(__dirname + '/views/index.html');
+});
+
+app.get("/dashboard", function(req, res){
+  if(req.session.email)
+    res.sendFile(__dirname + '/views/dashboard.html');
+  else
+    res.redirect("/");
 });
 
 app.get('/pagecount', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
-  if (!db) {
-    initDb(function(err){});
-  }
-  if (db) {
-    db.collection('counts').count(function(err, count ){
-      res.send('{ pageCount: ' + count + '}');
-    });
-  } else {
-    res.send('{ pageCount: -1 }');
-  }
+  res.send("Hello there");
 });
 
 // error handling
