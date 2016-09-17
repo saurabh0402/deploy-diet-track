@@ -98,12 +98,12 @@ app.post("/signup", function(req, res){
 
           db.collection('users').insertOne(user, function(err, result){
             if(err){
-              db.close();
+              
               res.json({"success": 0, "error": "Internal error"});
               return;
             }
 
-            db.close();
+            
             req.session.email = user.email;
             res.json({"success": 1, "error": false});
             req.session.email = user.email;
