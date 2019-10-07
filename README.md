@@ -1,13 +1,13 @@
 #**Diet-Track**
 ---------------------------
 
-Site Url:-
+Site Url:
 http://nodejs-mongodb-example-track-diet-2.0ec9.hackathon.openshiftapps.com/
 
-Submission Url:-
+Submission Url:
 http://devpost.com/software/deploy-diet-track
 
-Demo/Screencast Link:-
+Demo/Screencast Link:
 https://www.youtube.com/watch?v=5a8Hv9e-SUE#action=share
 
 ##Description:-
