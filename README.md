@@ -10,7 +10,7 @@ http://devpost.com/software/deploy-diet-track
 Demo/Screencast Link:-
 https://www.youtube.com/watch?v=5a8Hv9e-SUE#action=share
 
-##Description:-
+## Description:-
 
 Suppose you are on a diet, and your friend gives you a very delicious cake to eat. Now you want to eat it but you can't (remember you are on a diet). But what if it's been many days since you ate something very fatty. But you don't know what you ate in last 2 or 3 days.
 
@@ -23,7 +23,7 @@ The API for the web app has been deployed on openshift. The backend is written i
 
 Built With: html, javascript, css, node.js, mongodb
 
-##Team members:-
+## Team members:-
 
 <a href="https://github.com/saurabh0402">Saurabh Kumar</a>
 
